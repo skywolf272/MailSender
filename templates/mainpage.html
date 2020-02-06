@@ -1,0 +1,21 @@
+﻿{% load static %}
+<!DOCKTYPE hmtl>
+<html lang="rus">
+	<head>
+		<meta charset="UTF-8">
+		<title>Отправка сообщений на планеты класса Дзета</title>
+		<link rel="stylesheet" href="{% static "styles.css" %}">
+	</head>
+	<body>
+		<div><b>В выпитом пиве определяется количесвто и мощь человеческой силы..</b></div>
+		<p class="ci">(С) Люк Скайуоркерл</p>
+		<p>Чтобы заполнить данные - заполните данные:</p>
+		<form action="{% url 'go' %}" method ="POST">
+		{% csrf_token %}
+		{{form}}
+			<p>Электро почта получателя: <input type="text" name ="MailTo" value="МммПочт@mail.fisting"></input></p>
+			<p>Ваше сообщение сообщение: <textarea rows="10" cols="50" name="MailText"></textarea></p>
+			<p><input type="submit" value="Отправить"></p>
+		</form>
+	</body>
+</html>	
